@@ -1,0 +1,159 @@
+@import 'base/normalize.scss';
+
+//VARIABLES
+$blue: #548ca8;
+$gray-500: #4c4c6d;
+$brown-100: #ffeaca;
+$gray-100: #e8f6ef;
+$gray-200: #fafbff;
+$black: #141414;
+
+//BREAKPOINTS
+$breakpoint-mb-small: 576px;
+$breakpoint-mb: 768px;
+$breakpoint-mb-large: 992px;
+$breakpoint-desk: 1368px;
+
+//MIXINS
+@mixin responsive-containerdesk($margin) {
+  -webkit-border-radius: $margin;
+  margin: $margin;
+  max-width: 1360px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  @media (max-width: 1080px) {
+    font-size: 93.75%;
+  }
+  @media (max-width: 720px) {
+    font-size: 87.5%;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: $gray-200;
+  color: $gray-500;
+  font-family: sans-serif;
+
+  header {
+    .header_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 40px;
+      font-family: 'Fredoka One', cursive;
+
+      @media (min-width: $breakpoint-desk) {
+        @include responsive-containerdesk(0 auto);
+      }
+
+      .logo_wrapper {
+        .logo {
+          margin: 20px auto 0;
+        }
+
+        .logo_txt {
+        }
+      }
+
+      nav {
+        a:not(:last-child) {
+          margin-right: 10px;
+        }
+        a:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  main {
+    .main_serie__background {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
+        url('../assets/breakingbadfull.jpg');
+      background-size: cover;
+      height: 450px;
+      .main_container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 450px;
+        padding: 30px 40px;
+        @media (min-width: $breakpoint-desk) {
+          @include responsive-containerdesk(0 auto);
+        }
+
+        .main_serie {
+          color: $gray-100;
+          width: 70%;
+          .serie_title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+          }
+
+          .serie_description {
+            margin-bottom: 40px;
+          }
+
+          .serie_buttons {
+            button {
+              background-color: rgba(0, 0, 0, 0.5);
+              border: none;
+              color: $gray-100;
+              padding: 15px 30px;
+              transition: 0.3s ease all;
+
+              @media (max-width: $breakpoint-mb) {
+                margin: 10px 0;
+              }
+            }
+
+            button i {
+              margin-right: 8px;
+            }
+
+            button:not(:last-child) {
+              margin-right: 15px;
+            }
+
+            button:hover {
+              background-color: $gray-100;
+              color: $gray-500;
+            }
+          }
+        }
+      }
+    }
+
+    .movie_carousel {
+      margin: 20px 0 !important;
+
+      @media (min-width: $breakpoint-desk) {
+        @include responsive-containerdesk(20px auto !important);
+
+        img {
+          width: 80% !important;
+          margin-right: 0px !important;
+        }
+      }
+    }
+  }
+}
