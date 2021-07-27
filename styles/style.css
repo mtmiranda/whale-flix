@@ -361,19 +361,22 @@ th {
   padding: 0;
   box-sizing: border-box; }
 
-@media (max-width: 1080px) {
-  html {
-    font-size: 93.75%; } }
-@media (max-width: 720px) {
-  html {
-    font-size: 87.5%; } }
+html {
+  scroll-behavior: smooth; }
+  @media (max-width: 1080px) {
+    html {
+      font-size: 93.75%; } }
+  @media (max-width: 720px) {
+    html {
+      font-size: 87.5%; } }
 
 img {
   max-width: 100%;
   height: auto;
   display: block; }
 
-a {
+a,
+a:hover {
   text-decoration: none;
   color: inherit; }
 
@@ -382,6 +385,21 @@ body {
   background: #fafbff;
   color: #4c4c6d;
   font-family: sans-serif; }
+  body .modal-dialog {
+    max-width: 800px;
+    margin: 30px auto; }
+  body .modal-body {
+    position: relative;
+    padding: 0px; }
+  body .close {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    z-index: 999;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #fff;
+    opacity: 1; }
   body header .header_container {
     display: flex;
     align-items: center;
@@ -427,7 +445,8 @@ body {
           border: none;
           color: #e8f6ef;
           padding: 15px 30px;
-          transition: 0.3s ease all; }
+          transition: 0.3s ease all;
+          outline: none; }
           @media (max-width: 768px) {
             body main .main_serie__background .main_container .main_serie .serie_buttons button {
               margin: 10px 0; } }

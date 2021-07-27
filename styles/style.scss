@@ -28,6 +28,8 @@ $breakpoint-desk: 1368px;
 }
 
 html {
+  scroll-behavior: smooth;
+
   @media (max-width: 1080px) {
     font-size: 93.75%;
   }
@@ -42,7 +44,8 @@ img {
   display: block;
 }
 
-a {
+a,
+a:hover {
   text-decoration: none;
   color: inherit;
 }
@@ -52,6 +55,26 @@ body {
   background: $gray-200;
   color: $gray-500;
   font-family: sans-serif;
+
+  .modal-dialog {
+    max-width: 800px;
+    margin: 30px auto;
+  }
+
+  .modal-body {
+    position: relative;
+    padding: 0px;
+  }
+  .close {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    z-index: 999;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #fff;
+    opacity: 1;
+  }
 
   header {
     .header_container {
@@ -120,6 +143,7 @@ body {
               color: $gray-100;
               padding: 15px 30px;
               transition: 0.3s ease all;
+              outline: none;
 
               @media (max-width: $breakpoint-mb) {
                 margin: 10px 0;
