@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhaleFlix</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/owl/owl.carousel.min.css">
-    <link rel="stylesheet" href="styles/owl/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles/owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="styles/owl/owl.theme.default.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
@@ -30,8 +32,25 @@
             </nav>
         </div>
     </header>
-
     <main>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                                allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="main_serie__background">
             <div class="main_container">
                 <div class="main_serie">
@@ -40,8 +59,13 @@
                         pelo
                         futuro da família, mudando o destino de todos.</p>
                     <div class="serie_buttons">
-                        <button role="button"><i class="far fa-play-circle"></i>Assistir agora</button>
-                        <button role="button"><i class="fas fa-info-circle"></i>Mais informações</button>
+                        <button class="video-btn" data-toggle="modal" data-target="#myModal"
+                            data-src="https://www.youtube.com/embed/HhesaQXLuRY" role="button"><i
+                                class="far fa-play-circle"></i>Assistir
+                            trailer</button>
+                        <button role="button"><a rel="noopener" target="_blank"
+                                href="https://pt.wikipedia.org/wiki/Breaking_Bad"><i class="fas fa-info-circle"></i>Mais
+                                informações</a></button>
                     </div>
                 </div>
             </div>
@@ -66,6 +90,8 @@
     <script src="./js/owl/jquery.min.js"></script>
     <script src="./js/owl/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
