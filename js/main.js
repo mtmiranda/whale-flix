@@ -60,3 +60,7 @@ $(document).ready(function () {
     $('.modal:visible').each(alignModal);
   });
 });
+
+$(document).ready(function () {
+  $('.item_description').parent().prepend('<div class="item_overlay">');
+});
