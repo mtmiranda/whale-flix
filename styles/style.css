@@ -370,6 +370,19 @@ html {
     html {
       font-size: 87.5%; } }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0; }
+
+header,
+.section-title {
+  font-family: 'Fredoka One', cursive; }
+
 img {
   max-width: 100%;
   height: auto;
@@ -393,8 +406,8 @@ body {
     padding: 0px; }
   body .close {
     position: absolute;
-    right: -30px;
-    top: 0;
+    right: 10px;
+    top: 0px;
     z-index: 999;
     font-size: 2rem;
     font-weight: normal;
@@ -404,8 +417,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 40px;
-    font-family: 'Fredoka One', cursive; }
+    padding: 30px 40px; }
     @media (min-width: 1368px) {
       body header .header_container {
         -webkit-border-radius: 0 auto;
@@ -417,30 +429,30 @@ body {
       margin-right: 10px; }
     body header .header_container nav a:hover {
       opacity: 0.8; }
-  body main .main_serie__background {
+  body main .main_container .main_serie__background {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url("../assets/breakingbadfull.jpg");
     background-size: cover;
     height: 450px; }
-    body main .main_serie__background .main_container {
+    body main .main_container .main_serie__background .main_serie_wrapper {
       display: flex;
       justify-content: center;
       flex-direction: column;
       height: 450px;
       padding: 30px 40px; }
       @media (min-width: 1368px) {
-        body main .main_serie__background .main_container {
+        body main .main_container .main_serie__background .main_serie_wrapper {
           -webkit-border-radius: 0 auto;
           margin: 0 auto;
           max-width: 1360px; } }
-      body main .main_serie__background .main_container .main_serie {
+      body main .main_container .main_serie__background .main_serie_wrapper .main_serie {
         color: #e8f6ef;
         width: 70%; }
-        body main .main_serie__background .main_container .main_serie .serie_title {
+        body main .main_container .main_serie__background .main_serie_wrapper .main_serie .serie_title {
           font-size: 2rem;
           margin-bottom: 1rem; }
-        body main .main_serie__background .main_container .main_serie .serie_description {
+        body main .main_container .main_serie__background .main_serie_wrapper .main_serie .serie_description {
           margin-bottom: 40px; }
-        body main .main_serie__background .main_container .main_serie .serie_buttons button {
+        body main .main_container .main_serie__background .main_serie_wrapper .main_serie .serie_buttons button {
           background-color: rgba(0, 0, 0, 0.5);
           border: none;
           color: #e8f6ef;
@@ -448,24 +460,83 @@ body {
           transition: 0.3s ease all;
           outline: none; }
           @media (max-width: 768px) {
-            body main .main_serie__background .main_container .main_serie .serie_buttons button {
-              margin: 10px 0; } }
-        body main .main_serie__background .main_container .main_serie .serie_buttons button i {
+            body main .main_container .main_serie__background .main_serie_wrapper .main_serie .serie_buttons button {
+              margin: 10px 0;
+              width: 200px; } }
+        body main .main_container .main_serie__background .main_serie_wrapper .main_serie .serie_buttons button i {
           margin-right: 8px; }
-        body main .main_serie__background .main_container .main_serie .serie_buttons button:not(:last-child) {
+        body main .main_container .main_serie__background .main_serie_wrapper .main_serie .serie_buttons button:not(:last-child) {
           margin-right: 15px; }
-        body main .main_serie__background .main_container .main_serie .serie_buttons button:hover {
+        body main .main_container .main_serie__background .main_serie_wrapper .main_serie .serie_buttons button:hover {
           background-color: #e8f6ef;
           color: #4c4c6d; }
-  body main .movie_carousel {
-    margin: 20px 0 !important; }
+  body main .main_container .carousel_wrapper {
+    padding: 0 10px; }
+    body main .main_container .carousel_wrapper h4 {
+      text-align: center;
+      padding: 20px 0; }
+      body main .main_container .carousel_wrapper h4 i {
+        margin-left: 8px; }
     @media (min-width: 1368px) {
-      body main .movie_carousel {
+      body main .main_container .carousel_wrapper {
         -webkit-border-radius: 20px auto !important;
         margin: 20px auto !important;
         max-width: 1360px; }
-        body main .movie_carousel img {
+        body main .main_container .carousel_wrapper img {
           width: 80% !important;
           margin-right: 0px !important; } }
+    body main .main_container .carousel_wrapper .serie_carousel .item {
+      position: relative;
+      cursor: pointer; }
+      body main .main_container .carousel_wrapper .serie_carousel .item .item_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: #fff;
+        opacity: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%); }
+      body main .main_container .carousel_wrapper .serie_carousel .item .item_description {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #fafbff;
+        width: 200px;
+        text-align: center; }
+      body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description {
+        display: block; }
+        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text span.parental_rating {
+          border: 1px solid #e8f6ef;
+          padding: 2px;
+          border-radius: 2px; }
+        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text button {
+          background-color: rgba(0, 0, 0, 0.5);
+          border: none;
+          color: #e8f6ef;
+          padding: 15px 30px;
+          transition: 0.3s ease all;
+          outline: none; }
+          @media (max-width: 768px) {
+            body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text button {
+              margin: 10px 0; } }
+        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text button i {
+          margin-right: 8px; }
+        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text button:not(:last-child) {
+          margin-right: 15px; }
+        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text button:hover {
+          background-color: #e8f6ef;
+          color: #4c4c6d; }
+        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text .text h3,
+        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text span {
+          filter: brightness(100%); }
+      body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_overlay {
+        opacity: 1; }
+    @media (min-width: 1368px) {
+      body main .main_container .carousel_wrapper .serie_carousel img {
+        width: 80% !important;
+        margin-right: 0px !important; } }
 
 /*# sourceMappingURL=style.css.map */

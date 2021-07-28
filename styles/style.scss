@@ -38,6 +38,21 @@ html {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+.section-title {
+  font-family: 'Fredoka One', cursive;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -67,8 +82,8 @@ body {
   }
   .close {
     position: absolute;
-    right: -30px;
-    top: 0;
+    right: 10px;
+    top: 0px;
     z-index: 999;
     font-size: 2rem;
     font-weight: normal;
@@ -82,7 +97,6 @@ body {
       align-items: center;
       justify-content: space-between;
       padding: 30px 40px;
-      font-family: 'Fredoka One', cursive;
 
       @media (min-width: $breakpoint-desk) {
         @include responsive-containerdesk(0 auto);
@@ -109,73 +123,167 @@ body {
   }
 
   main {
-    .main_serie__background {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
-        url('../assets/breakingbadfull.jpg');
-      background-size: cover;
-      height: 450px;
-      .main_container {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+    .main_container {
+      .main_serie__background {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
+          url('../assets/breakingbadfull.jpg');
+        background-size: cover;
         height: 450px;
-        padding: 30px 40px;
-        @media (min-width: $breakpoint-desk) {
-          @include responsive-containerdesk(0 auto);
-        }
-
-        .main_serie {
-          color: $gray-100;
-          width: 70%;
-          .serie_title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .main_serie_wrapper {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          height: 450px;
+          padding: 30px 40px;
+          @media (min-width: $breakpoint-desk) {
+            @include responsive-containerdesk(0 auto);
           }
 
-          .serie_description {
-            margin-bottom: 40px;
-          }
+          .main_serie {
+            color: $gray-100;
+            width: 70%;
+            .serie_title {
+              font-size: 2rem;
+              margin-bottom: 1rem;
+            }
 
-          .serie_buttons {
-            button {
-              background-color: rgba(0, 0, 0, 0.5);
-              border: none;
-              color: $gray-100;
-              padding: 15px 30px;
-              transition: 0.3s ease all;
-              outline: none;
+            .serie_description {
+              margin-bottom: 40px;
+            }
 
-              @media (max-width: $breakpoint-mb) {
-                margin: 10px 0;
+            .serie_buttons {
+              button {
+                background-color: rgba(0, 0, 0, 0.5);
+                border: none;
+                color: $gray-100;
+                padding: 15px 30px;
+                transition: 0.3s ease all;
+                outline: none;
+
+                @media (max-width: $breakpoint-mb) {
+                  margin: 10px 0;
+                  width: 200px;
+                }
               }
-            }
 
-            button i {
-              margin-right: 8px;
-            }
+              button i {
+                margin-right: 8px;
+              }
 
-            button:not(:last-child) {
-              margin-right: 15px;
-            }
+              button:not(:last-child) {
+                margin-right: 15px;
+              }
 
-            button:hover {
-              background-color: $gray-100;
-              color: $gray-500;
+              button:hover {
+                background-color: $gray-100;
+                color: $gray-500;
+              }
             }
           }
         }
       }
-    }
+      .carousel_wrapper {
+        padding: 0 10px;
+        h4 {
+          text-align: center;
+          padding: 20px 0;
 
-    .movie_carousel {
-      margin: 20px 0 !important;
+          & i {
+            margin-left: 8px;
+          }
+        }
 
-      @media (min-width: $breakpoint-desk) {
-        @include responsive-containerdesk(20px auto !important);
+        @media (min-width: $breakpoint-desk) {
+          @include responsive-containerdesk(20px auto !important);
 
-        img {
-          width: 80% !important;
-          margin-right: 0px !important;
+          img {
+            width: 80% !important;
+            margin-right: 0px !important;
+          }
+        }
+
+        .serie_carousel {
+          .item {
+            position: relative;
+            cursor: pointer;
+            .item_overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              color: #fff;
+              opacity: 0;
+              background: linear-gradient(
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5) 100%
+              );
+            }
+            .item_description {
+              display: none;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              color: $gray-200;
+              width: 200px;
+              text-align: center;
+            }
+
+            &:hover {
+              .item_description {
+                display: block;
+
+                .text {
+                  span.parental_rating {
+                    border: 1px solid $gray-100;
+                    padding: 2px;
+                    border-radius: 2px;
+                  }
+                  button {
+                    background-color: rgba(0, 0, 0, 0.5);
+                    border: none;
+                    color: $gray-100;
+                    padding: 15px 30px;
+                    transition: 0.3s ease all;
+                    outline: none;
+
+                    @media (max-width: $breakpoint-mb) {
+                      margin: 10px 0;
+                    }
+                  }
+
+                  button i {
+                    margin-right: 8px;
+                  }
+
+                  button:not(:last-child) {
+                    margin-right: 15px;
+                  }
+
+                  button:hover {
+                    background-color: $gray-100;
+                    color: $gray-500;
+                  }
+
+                  & .text h3,
+                  span {
+                    filter: brightness(100%);
+                  }
+                }
+              }
+              .item_overlay {
+                opacity: 1;
+              }
+            }
+          }
+
+          @media (min-width: $breakpoint-desk) {
+            img {
+              width: 80% !important;
+              margin-right: 0px !important;
+            }
+          }
         }
       }
     }
