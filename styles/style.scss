@@ -65,11 +65,23 @@ a:hover {
   color: inherit;
 }
 
+.container_box {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.dark {
+  background: #292c35;
+  color: #fff;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   background: $gray-200;
   color: $gray-500;
   font-family: sans-serif;
+  transition: background 0.2s linear;
 
   .modal-dialog {
     max-width: 800px;
@@ -105,13 +117,57 @@ body {
       .logo_wrapper {
         .logo {
           margin: 20px auto 0;
+          width: 150px;
+        }
+      }
+
+      .switch_wrapper {
+        margin: 0 40px;
+        .checkbox {
+          opacity: 0;
+          position: absolute;
         }
 
-        .logo_txt {
+        .far.fa-lightbulb:nth-child(1) {
+          color: #f1c40f;
+        }
+        .far.fa-lightbulb:nth-child(2) {
+          color: gray;
+        }
+
+        .label {
+          background-color: #111;
+          border-radius: 50px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 5px;
+          position: relative;
+          height: 26px;
+          width: 50px;
+          transform: scale(1.5);
+        }
+
+        .label .ball {
+          background-color: #fff;
+          border-radius: 50%;
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          height: 22px;
+          width: 22px;
+          transform: translateX(0px);
+          transition: transform 0.2s linear;
+        }
+
+        .checkbox:checked + .label .ball {
+          transform: translateX(24px);
         }
       }
 
       nav {
+        display: flex;
         a:not(:last-child) {
           margin-right: 10px;
         }
@@ -195,11 +251,6 @@ body {
 
         @media (min-width: $breakpoint-desk) {
           @include responsive-containerdesk(20px auto !important);
-
-          img {
-            width: 80% !important;
-            margin-right: 0px !important;
-          }
         }
 
         .serie_carousel {
@@ -277,14 +328,66 @@ body {
               }
             }
           }
-
-          @media (min-width: $breakpoint-desk) {
-            img {
-              width: 80% !important;
-              margin-right: 0px !important;
-            }
-          }
         }
+      }
+    }
+  }
+
+  footer {
+    .footer-basic {
+      padding: 40px 0;
+      & ul {
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 0;
+      }
+
+      & li {
+        padding: 0 10px;
+      }
+
+      & ul a {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.8;
+      }
+
+      & ul a:hover {
+        opacity: 1;
+      }
+
+      & .social {
+        text-align: center;
+        padding-bottom: 25px;
+      }
+
+      & .social > a {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        margin: 0 8px;
+        color: inherit;
+        opacity: 0.75;
+      }
+
+      & .social > a:hover {
+        opacity: 0.9;
+      }
+
+      & .copyright {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 13px;
+        color: #aaa;
+        margin-bottom: 0;
       }
     }
   }
