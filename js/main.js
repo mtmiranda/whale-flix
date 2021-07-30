@@ -64,3 +64,19 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('.item_description').parent().prepend('<div class="item_overlay">');
 });
+
+const chk = document.getElementById('chk');
+
+chk.addEventListener('change', (event) => {
+  if (document.body.classList.contains('dark')) {
+    document.body.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.body.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }
+});
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark');
+}
