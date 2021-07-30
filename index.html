@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whaleflix</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,60 +18,70 @@
 </head>
 
 <body>
-    <header>
-        <div class="header_container">
-            <div class="logo_wrapper">
-                <h2 class="logo_txt">Whaleflix</h2>
-                <img class="logo" src="http://placehold.it/" />
+    <section class="container_box">
+        <header>
+            <div class="header_container">
+                <div class="logo_wrapper">
+                    <h2 class="logo_txt">Whaleflix</h2>
+                    <img class="logo" src="./assets/whaleflix-logo.png" />
+                </div>
+                <nav>
+                    <div class="switch_wrapper">
+                        <input type="checkbox" class="checkbox" id="chk" />
+                        <label class="label" for="chk">
+                            <i class="far fa-lightbulb"></i>
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="ball"></div>
+                        </label>
+                    </div>
+                    <a href="#serie-carousel">Séries</a>
+                    <a href="#movie-carousel">Filmes</a>
+                </nav>
             </div>
-            <nav>
-                <a href="#serie-carousel">Séries</a>
-                <a href="http://">Filmes</a>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
-                                allow="autoplay"></iframe>
+        </header>
+        <main>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                                    allow="autoplay"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="main_container">
-            <div class="main_serie__background">
-                <section class="main_serie_wrapper">
-                    <div class="main_serie">
-                        <h3 class="serie_title">Breaking Bad (2008)</h3>
-                        <p class="serie_description">Ao saber que tem câncer, um professor passa a fabricar
-                            metanfetamina
-                            pelo
-                            futuro da família, mudando o destino de todos.</p>
-                        <div class="serie_buttons">
-                            <button class="video-btn" data-toggle="modal" data-target="#myModal"
-                                data-src="https://www.youtube.com/embed/HhesaQXLuRY" role="button"><i
-                                    class="far fa-play-circle"></i>Assistir
-                                trailer</button>
-                            <button role="button"><a rel="noopener" target="_blank"
-                                    href="https://pt.wikipedia.org/wiki/Breaking_Bad"><i
-                                        class="fas fa-info-circle"></i>Mais
-                                    informações</a></button>
+            <div class="main_container">
+                <div class="main_serie__background">
+                    <section class="main_serie_wrapper">
+                        <div class="main_serie">
+                            <h3 class="serie_title">Breaking Bad (2008)</h3>
+                            <p class="serie_description">Ao saber que tem câncer, um professor passa a fabricar
+                                metanfetamina
+                                pelo
+                                futuro da família, mudando o destino de todos.</p>
+                            <div class="serie_buttons">
+                                <button class="video-btn" data-toggle="modal" data-target="#myModal"
+                                    data-src="https://www.youtube.com/embed/HhesaQXLuRY" role="button"><i
+                                        class="far fa-play-circle"></i>Assistir
+                                    trailer</button>
+                                <button role="button"><a rel="noopener" target="_blank"
+                                        href="https://pt.wikipedia.org/wiki/Breaking_Bad"><i
+                                            class="fas fa-info-circle"></i>Mais
+                                        informações</a></button>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section class="carousel_wrapper">
+                    </section>
+                </div>
+                <section id="serie-carousel" class="carousel_wrapper">
                     <h4 class="section-title">Séries<i class="fas fa-video"></i></h4>
-                    <div id="serie-carousel" class="serie_carousel">
+                    <div class="serie_carousel">
                         <div class="owl-carousel owl-theme">
                             <div class="item">
                                 <div class="item_description">
@@ -240,10 +250,131 @@
                         </div>
                     </div>
                 </section>
-            </div>
-        </div>
-    </main>
 
+                <section id="movie-carousel" class="carousel_wrapper">
+                    <h4 class="section-title">Filmes<i class="fas fa-film"></i></h4>
+                    <div id="serie-carousel" class="serie_carousel">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="item_description">
+                                    <div class="text">
+                                        <h3>Space Jam: Um Novo Legado</h3>
+                                        <p>08 de jul de 2021</p>
+                                        <p><span class="parental_rating">L</span>
+                                            Família, Animação, Comédia &bull; 1h 55m </p>
+
+                                        <button class="video-btn" data-toggle="modal" data-target="#myModal"
+                                            data-src="https://www.youtube.com/embed/SR_vhri_W0E" role="button"><i
+                                                class="far fa-play-circle"></i>Assistir
+                                            trailer</button>
+                                    </div>
+                                </div>
+                                <img src="./assets/carousel2-1.jpg">
+                            </div>
+
+                            <div class="item">
+                                <div class="item_description">
+                                    <div class="text">
+                                        <h3>Luca</h3>
+                                        <p>
+                                            17 de jun de 2021</p>
+                                        <p><span class="parental_rating">L</span>
+                                            Família, Animação, Comédia, Fantasia &bull; 1h 41m </p>
+
+                                        <button class="video-btn" data-toggle="modal" data-target="#myModal"
+                                            data-src="https://www.youtube.com/embed/5ossqdC-kA8" role="button"><i
+                                                class="far fa-play-circle"></i>Assistir
+                                            trailer</button>
+                                    </div>
+                                </div>
+                                <img src="./assets/carousel2-2.jpg">
+                            </div>
+
+                            <div class="item">
+                                <div class="item_description">
+                                    <div class="text">
+                                        <h3>Um Lugar Silencioso - Parte II</h3>
+                                        <p>
+                                            21 de mai de 2021</p>
+                                        <p><span class="parental_rating">12</span>
+                                            Ficção científica, Thriller, Terror &bull; 1h 37m </p>
+                                        <button class="video-btn" data-toggle="modal" data-target="#myModal"
+                                            data-src="https://www.youtube.com/embed/McQb7-K_GbM" role="button"><i
+                                                class="far fa-play-circle"></i>Assistir
+                                            trailer</button>
+                                    </div>
+                                </div>
+                                <img src="./assets/carousel2-3.jpg">
+                            </div>
+
+                            <div class="item">
+                                <div class="item_description">
+                                    <div class="text">
+                                        <h3>Army of the Dead: Invasão em Las Vegas</h3>
+                                        <p>
+                                            14 de mai de 2021</p>
+                                        <p><span class="parental_rating">18</span>
+                                            Ação, Crime, Terror &bull; 2h </p>
+                                        <button class="video-btn" data-toggle="modal" data-target="#myModal"
+                                            data-src="https://www.youtube.com/embed/f303fsdoBHY" role="button"><i
+                                                class="far fa-play-circle"></i>Assistir
+                                            trailer</button>
+                                    </div>
+                                </div><img src="./assets/carousel2-4.jpg">
+                            </div>
+
+                            <div class="item">
+                                <div class="item_description">
+                                    <div class="text">
+                                        <h3>Mortal Kombat</h3>
+                                        <p>
+                                            07 de abr de 2021</p>
+                                        <p><span class="parental_rating">16</span>
+                                            Ação, Fantasia, Terror &bull; 1h 50m </p>
+                                        <button class="video-btn" data-toggle="modal" data-target="#myModal"
+                                            data-src="https://www.youtube.com/embed/8Tk8sqXlogM" role="button"><i
+                                                class="far fa-play-circle"></i>Assistir
+                                            trailer</button>
+                                    </div>
+                                </div>
+                                <img src="./assets/carousel2-5.jpg">
+                            </div>
+
+                            <div class="item">
+                                <div class="item_description">
+                                    <div class="text">
+                                        <h3>Jungle Cruiset</h3>
+                                        <p>
+                                            29 de jul de 2021</p>
+                                        <p><span class="parental_rating">12</span>
+                                            Ação, Fantasia, Comédia, Ação &bull; 2h 7m </p>
+                                        <button class="video-btn" data-toggle="modal" data-target="#myModal"
+                                            data-src="https://www.youtube.com/embed/81iqHKqQ1ss" role="button"><i
+                                                class="far fa-play-circle"></i>Assistir
+                                            trailer</button>
+                                    </div>
+                                </div>
+                                <img src="./assets/carousel2-6.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+
+        <footer>
+            <div class="footer-basic">
+                <div class="social"><a href="https://www.linkedin.com/in/matheusmdsm/" rel="noopener" target="_blank"><i
+                            class="icon ion-social-linkedin"></i></a><a href="https://github.com/mtmiranda"
+                        rel="noopener" target="_blank"><i class="icon ion-social-github"></i></a><a
+                        href="https://www.instagram.com/matheusmdsm/" rel="noopener" target="_blank"><i
+                            class="icon ion-social-instagram"></i></a>
+                </div>
+                <p class="copyright">mtmiranda © 2021</p>
+            </div>
+        </footer>
+    </section>
     <script src="https://kit.fontawesome.com/e4b31211b3.js" crossorigin="anonymous"></script>
     <script src="./js/owl/jquery.min.js"></script>
     <script src="./js/owl/owl.carousel.min.js"></script>
