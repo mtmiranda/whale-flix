@@ -362,7 +362,8 @@ th {
   box-sizing: border-box; }
 
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth; }
   @media (max-width: 1080px) {
     html {
       font-size: 93.75%; } }
@@ -379,6 +380,11 @@ h6 {
   margin: 0;
   padding: 0; }
 
+button {
+  border: none;
+  background-color: transparent;
+  outline: 0 !important; }
+
 header,
 .section-title {
   font-family: 'Fredoka One', cursive; }
@@ -391,21 +397,28 @@ img {
 a,
 a:hover {
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+  outline: 0; }
+
+a:hover,
+a:active,
+a:focus {
+  outline: 0 !important; }
 
 .container_box {
   display: flex;
   flex-direction: column;
   min-height: 100vh; }
 
-body.dark {
-  background: #292c35;
+body.dark,
+body.dark header {
+  background-color: #292c35;
   color: #fff; }
 
 body {
   -webkit-font-smoothing: antialiased;
-  background: #fafbff;
-  color: #4c4c6d;
+  background: #eaf2f9;
+  color: #000814;
   font-family: sans-serif;
   transition: background 0.2s linear; }
   body .modal-dialog {
@@ -423,58 +436,107 @@ body {
     font-weight: normal;
     color: #fff;
     opacity: 1; }
-  body header .header_container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 40px; }
-    @media (min-width: 1368px) {
-      body header .header_container {
-        -webkit-border-radius: 0 auto;
-        margin: 0 auto;
-        max-width: 1360px; } }
-    body header .header_container .logo_wrapper .logo {
-      margin: 20px auto 0;
-      width: 150px; }
-    body header .header_container .switch_wrapper {
-      margin: 0 40px; }
-      body header .header_container .switch_wrapper .checkbox {
-        opacity: 0;
-        position: absolute; }
-      body header .header_container .switch_wrapper .far.fa-lightbulb:nth-child(1) {
-        color: #f1c40f; }
-      body header .header_container .switch_wrapper .far.fa-lightbulb:nth-child(2) {
-        color: gray; }
-      body header .header_container .switch_wrapper .label {
-        background-color: #111;
-        border-radius: 50px;
-        cursor: pointer;
+  body header {
+    background-color: #eaf2f9; }
+    body header .header_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 40px; }
+      @media (min-width: 1368px) {
+        body header .header_container {
+          -webkit-border-radius: 0 auto;
+          margin: 0 auto;
+          max-width: 1360px; } }
+      body header .header_container .logo_wrapper .logo {
+        margin: 20px auto 0;
+        width: 150px; }
+      body header .header_container .hamburguer_menu__wrapper {
+        font-size: 30px;
+        z-index: 1; }
+        body header .header_container .hamburguer_menu__wrapper .hamburguer_menu {
+          display: none;
+          position: absolute;
+          top: 40px;
+          right: 40px;
+          transition-delay: 2s; }
+          @media (max-width: 768px) {
+            body header .header_container .hamburguer_menu__wrapper .hamburguer_menu {
+              display: block; } }
+      body header .header_container .menu_show {
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        transition: transform 0.2s ease-in-out !important;
+        z-index: 1 !important; }
+      body header .header_container .menu_wrapper {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 5px;
-        position: relative;
-        height: 26px;
-        width: 50px;
-        transform: scale(1.5); }
-      body header .header_container .switch_wrapper .label .ball {
-        background-color: #fff;
-        border-radius: 50%;
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        height: 22px;
-        width: 22px;
-        transform: translateX(0px);
-        transition: transform 0.2s linear; }
-      body header .header_container .switch_wrapper .checkbox:checked + .label .ball {
-        transform: translateX(24px); }
-    body header .header_container nav {
-      display: flex; }
-      body header .header_container nav a:not(:last-child) {
-        margin-right: 10px; }
-      body header .header_container nav a:hover {
-        opacity: 0.8; }
+        justify-content: center;
+        align-items: center; }
+        body header .header_container .menu_wrapper .switch_wrapper {
+          margin: 0 40px; }
+          @media (max-width: 768px) {
+            body header .header_container .menu_wrapper .switch_wrapper {
+              padding: 20px 0;
+              position: absolute;
+              top: 26px;
+              right: 80px; } }
+          body header .header_container .menu_wrapper .switch_wrapper .checkbox {
+            opacity: 0;
+            position: absolute; }
+          body header .header_container .menu_wrapper .switch_wrapper .far.fa-lightbulb {
+            color: #f1c40f; }
+          body header .header_container .menu_wrapper .switch_wrapper .fas.fa-lightbulb {
+            color: #8d99ae; }
+          body header .header_container .menu_wrapper .switch_wrapper .label {
+            background-color: #111;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            position: relative;
+            height: 26px;
+            width: 50px;
+            transform: scale(1.5); }
+          body header .header_container .menu_wrapper .switch_wrapper .label .ball {
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            height: 22px;
+            width: 22px;
+            transform: translateX(0px);
+            transition: transform 0.2s linear; }
+          body header .header_container .menu_wrapper .switch_wrapper .checkbox:checked + .label .ball {
+            transform: translateX(24px); }
+        body header .header_container .menu_wrapper nav {
+          display: flex; }
+          @media (max-width: 768px) {
+            body header .header_container .menu_wrapper nav {
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              visibility: hidden;
+              opacity: 0;
+              transform: scale(0.7);
+              position: relative;
+              top: 25px;
+              left: 28px; } }
+          @media (max-width: 768px) {
+            body header .header_container .menu_wrapper nav a {
+              padding: 10px 20px;
+              display: block; } }
+          body header .header_container .menu_wrapper nav a:not(:last-child) {
+            margin-right: 10px; }
+            @media (max-width: 768px) {
+              body header .header_container .menu_wrapper nav a:not(:last-child) {
+                margin-right: 0;
+                border-bottom: 1px solid #ddd; } }
+          body header .header_container .menu_wrapper nav a:hover {
+            opacity: 0.8; }
   body main .main_container .main_serie__background {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url("../assets/breakingbadfull.jpg");
     background-size: cover;
@@ -528,10 +590,10 @@ body {
         -webkit-border-radius: 20px auto !important;
         margin: 20px auto !important;
         max-width: 1360px; } }
-    body main .main_container .carousel_wrapper .serie_carousel .item {
+    body main .main_container .carousel_wrapper .carousel .item {
       position: relative;
       cursor: pointer; }
-      body main .main_container .carousel_wrapper .serie_carousel .item .item_overlay {
+      body main .main_container .carousel_wrapper .carousel .item .item_overlay {
         position: absolute;
         top: 0;
         left: 0;
@@ -540,7 +602,7 @@ body {
         color: #fff;
         opacity: 0;
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%); }
-      body main .main_container .carousel_wrapper .serie_carousel .item .item_description {
+      body main .main_container .carousel_wrapper .carousel .item .item_description {
         display: none;
         position: absolute;
         left: 50%;
@@ -549,13 +611,13 @@ body {
         color: #fafbff;
         width: 200px;
         text-align: center; }
-      body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description {
+      body main .main_container .carousel_wrapper .carousel .item:hover .item_description {
         display: block; }
-        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text span.parental_rating {
+        body main .main_container .carousel_wrapper .carousel .item:hover .item_description .text span.parental_rating {
           border: 1px solid #e8f6ef;
           padding: 2px;
           border-radius: 2px; }
-        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text button {
+        body main .main_container .carousel_wrapper .carousel .item:hover .item_description .text button {
           background-color: rgba(0, 0, 0, 0.5);
           border: none;
           color: #e8f6ef;
@@ -563,19 +625,19 @@ body {
           transition: 0.3s ease all;
           outline: none; }
           @media (max-width: 768px) {
-            body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text button {
+            body main .main_container .carousel_wrapper .carousel .item:hover .item_description .text button {
               margin: 10px 0; } }
-        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text button i {
+        body main .main_container .carousel_wrapper .carousel .item:hover .item_description .text button i {
           margin-right: 8px; }
-        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text button:not(:last-child) {
+        body main .main_container .carousel_wrapper .carousel .item:hover .item_description .text button:not(:last-child) {
           margin-right: 15px; }
-        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text button:hover {
+        body main .main_container .carousel_wrapper .carousel .item:hover .item_description .text button:hover {
           background-color: #e8f6ef;
           color: #4c4c6d; }
-        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text .text h3,
-        body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_description .text span {
+        body main .main_container .carousel_wrapper .carousel .item:hover .item_description .text .text h3,
+        body main .main_container .carousel_wrapper .carousel .item:hover .item_description .text span {
           filter: brightness(100%); }
-      body main .main_container .carousel_wrapper .serie_carousel .item:hover .item_overlay {
+      body main .main_container .carousel_wrapper .carousel .item:hover .item_overlay {
         opacity: 1; }
   body footer .footer-basic {
     padding: 40px 0; }
