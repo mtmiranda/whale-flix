@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whaleflix</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
@@ -25,7 +26,10 @@
                     <h2 class="logo_txt">Whaleflix</h2>
                     <img class="logo" src="./assets/whaleflix-logo.png" />
                 </div>
-                <nav>
+                <div class="hamburguer_menu__wrapper">
+                    <button class="hamburguer_menu"><i class="fas fa-bars"></i></button>
+                </div>
+                <div class="menu_wrapper">
                     <div class="switch_wrapper">
                         <input type="checkbox" class="checkbox" id="chk" />
                         <label class="label" for="chk">
@@ -34,9 +38,11 @@
                             <div class="ball"></div>
                         </label>
                     </div>
-                    <a href="#serie-carousel">Séries</a>
-                    <a href="#movie-carousel">Filmes</a>
-                </nav>
+                    <nav id="nav">
+                        <a href="#serie-carousel">Séries</a>
+                        <a href="#movie-carousel">Filmes</a>
+                    </nav>
+                </div>
             </div>
         </header>
         <main>
@@ -81,7 +87,7 @@
                 </div>
                 <section id="serie-carousel" class="carousel_wrapper">
                     <h4 class="section-title">Séries<i class="fas fa-video"></i></h4>
-                    <div class="serie_carousel">
+                    <div class="carousel">
                         <div class="owl-carousel owl-theme">
                             <div class="item">
                                 <div class="item_description">
@@ -253,7 +259,7 @@
 
                 <section id="movie-carousel" class="carousel_wrapper">
                     <h4 class="section-title">Filmes<i class="fas fa-film"></i></h4>
-                    <div id="serie-carousel" class="serie_carousel">
+                    <div class="carousel">
                         <div class="owl-carousel owl-theme">
                             <div class="item">
                                 <div class="item_description">
@@ -366,8 +372,8 @@
         <footer>
             <div class="footer-basic">
                 <div class="social"><a href="https://www.linkedin.com/in/matheusmdsm/" rel="noopener" target="_blank"><i
-                            class="icon ion-social-linkedin"></i></a><a href="https://github.com/mtmiranda"
-                        rel="noopener" target="_blank"><i class="icon ion-social-github"></i></a><a
+                            class="fab fa-linkedin"></i></a><a href="https://github.com/mtmiranda" rel="noopener"
+                        target="_blank"><i class="icon ion-social-github"></i></a><a
                         href="https://www.instagram.com/matheusmdsm/" rel="noopener" target="_blank"><i
                             class="icon ion-social-instagram"></i></a>
                 </div>
