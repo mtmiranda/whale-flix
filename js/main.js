@@ -16,30 +16,21 @@ $('.owl-carousel').owlCarousel({
 });
 
 $(document).ready(function () {
-  // Gets the video src from the data-src on each button
-
   var $videoSrc;
   $('.video-btn').click(function () {
     $videoSrc = $(this).data('src');
   });
   console.log($videoSrc);
-
-  // when the modal is opened autoplay it
   $('#myModal').on('shown.bs.modal', function (e) {
-    // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
     $('#video').attr(
       'src',
       $videoSrc + '?autoplay=1&amp;modestbranding=1&amp;showinfo=0'
     );
   });
-
   // stop playing the youtube video when I close the modal
   $('#myModal').on('hide.bs.modal', function (e) {
-    // a poor man's stop video
     $('#video').attr('src', $videoSrc);
   });
-
-  // document ready
 });
 
 $(document).ready(function () {
@@ -63,20 +54,30 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.item_description').parent().prepend('<div class="item_overlay">');
-});
 
-const chk = document.getElementById('chk');
+  const chk = document.getElementById('chk');
 
-chk.addEventListener('change', (event) => {
-  if (document.body.classList.contains('dark')) {
-    document.body.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-  } else {
+  chk.addEventListener('change', (event) => {
+    if (document.body.classList.contains('dark')) {
+      document.body.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      $('.logo').attr('src', './assets/whaleflix-logo.png');
+    } else {
+      document.body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      $('.logo').attr('src', './assets/whaleflix-logowhite.png');
+    }
+  });
+
+  if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
+    $('.logo').attr('src', './assets/whaleflix-logowhite.png');
   }
 });
 
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark');
-}
+$(document).ready(function () {
+  $('.hamburguer_menu').on('click', function () {
+    $('#nav').toggleClass('menu_show');
+    $('i', this).toggleClass('fas fa-bars fas fa-times');
+  });
+});
