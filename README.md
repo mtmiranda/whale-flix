@@ -24,4 +24,4 @@ Abra o arquivo 'index.html' para carregar o código no navegador de sua preferê
 
 ## Deploy (vercel) :computer:
 
-[]()
+[https://whale-flix-mtmiranda.vercel.app/](https://whale-flix-mtmiranda.vercel.app/)
